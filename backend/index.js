@@ -39,6 +39,8 @@ app.use("/users", authUser)
 app.use("/posts", authPost)
 app.use("/category", authCat)
 
-app.listen("5000", () => {
+const PORT = process.env.PORT || 5000
+
+app.listen(PORT, () => {
   console.log("backend running...")
 })
