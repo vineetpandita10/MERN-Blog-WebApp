@@ -22,3 +22,5 @@ In both backend and frontend terminals run npm start and Enjoy the deployment
 ### `Live site`
 
 https://641afadec700f200bf828628--glowing-gingersnap-3330f0.netlify.app/
+
+https://mern-blog-g13y.onrender.com/
