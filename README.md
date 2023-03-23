@@ -21,6 +21,6 @@ In both backend and frontend terminals run npm start and Enjoy the deployment
 
 ### `Live site`
 
-https://641c511d70d6a804653d745c--unrivaled-sunflower-1a213c.netlify.app/
+https://unrivaled-sunflower-1a213c.netlify.app/
 
-https://mern-blog-g13y.onrender.com/
+frontend deployed usin Netlify and backend using Render
