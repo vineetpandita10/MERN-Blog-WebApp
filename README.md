@@ -18,6 +18,7 @@ In the Terminal->
 ### `Enjoy`
 
 In both backend and frontend terminals run npm start and Enjoy.
+
 I've deployed the frontend using Netlify and backend using Render.
 
 ### `Live site`
