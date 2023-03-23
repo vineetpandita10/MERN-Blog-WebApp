@@ -17,10 +17,10 @@ In the Terminal->
 
 ### `Enjoy`
 
-In both backend and frontend terminals run npm start and Enjoy the deployment
+In both backend and frontend terminals run npm start and Enjoy.
+I've deployed the frontend using Netlify and backend using Render.
 
 ### `Live site`
 
 https://unrivaled-sunflower-1a213c.netlify.app/
 
-frontend deployed usin Netlify and backend using Render
