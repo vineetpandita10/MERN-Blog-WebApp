@@ -2,11 +2,11 @@ import React, { useContext, useEffect, useState } from "react"
 import "./details.css"
 import "../../components/header/header.css"
 import { useLocation } from "react-router-dom"
-import axios from "axios"
 import { Link } from "react-router-dom"
 import { BsPencilSquare } from "react-icons/bs"
 import { AiOutlineDelete } from "react-icons/ai"
 import { Context } from "../../context/Context"
+import { Axios } from "../../utils/requestMethods"
 
 export const DetailsPages = () => {
   const location = useLocation()
@@ -16,7 +16,7 @@ export const DetailsPages = () => {
   const [post, setPost] = useState({})
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get("/posts/" + path)
+      const res = await Axios.get("/posts/" + path)
       console.log(res)
 
       setPost(res.data)
@@ -29,7 +29,7 @@ export const DetailsPages = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/posts/${post._id}`, { data: { username: user.username } })
+      await Axios.delete(`/posts/${post._id}`, { data: { username: user.username } })
       window.location.replace("/")
     } catch (error) {}
   }

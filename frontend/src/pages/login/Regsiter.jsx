@@ -1,8 +1,7 @@
 import React, { useState } from "react"
 import "./login.css"
 import back from "../../assets/images/my-account.jpg"
-import axios from "axios"
-
+import { Axios } from "../../utils/requestMethods"
 export const Regsiter = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
@@ -13,7 +12,7 @@ export const Regsiter = () => {
     e.preventDefault()
     setError(false)
     try {
-      const res = await axios.post("/auth/register", {
+      const res = await Axios.post("/auth/register", {
         username,
         email,
         password,

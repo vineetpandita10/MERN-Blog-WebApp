@@ -4,7 +4,7 @@ import { IoIosAddCircleOutline } from "react-icons/io"
 import { useState } from "react"
 import { useContext } from "react"
 import { Context } from "../../context/Context"
-import axios from "axios"
+import { Axios } from "../../utils/requestMethods"
 
 export const Create = () => {
   const [title, setTitle] = useState("")
@@ -30,13 +30,13 @@ export const Create = () => {
       newPost.photo = filename
 
       try {
-        await axios.post("/upload", data)
+        await Axios.post("/upload", data)
       } catch (error) {
         console.log(error)
       }
     }
     try {
-      const res = await axios.post("/posts", newPost)
+      const res = await Axios.post("/posts", newPost)
       window.location.replace("/post/" + res.data._id)
     } catch (error) {}
   }

@@ -6,9 +6,9 @@ import "slick-carousel/slick/slick-theme.css"
 import Slider from "react-slick"
 import { GrFormPrevious } from "react-icons/gr"
 import { MdNavigateNext } from "react-icons/md"
-import axios from "axios"
 import { useLocation } from "react-router-dom"
 import { Link } from "react-router-dom"
+import { Axios } from "../../utils/requestMethods"
 
 //this page reffers to the top of the page photo slider categories
 const SampleNextArrow = (props) => {
@@ -58,7 +58,7 @@ export const Category = () => {
 
   useEffect(() => {
     const getCat = async () => {
-      const res = await axios.get("/category" + search)
+      const res = await Axios.get("/category" + search)
       setCat(res.data)
     }
     getCat()

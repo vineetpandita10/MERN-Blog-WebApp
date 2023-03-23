@@ -3,7 +3,7 @@ import "./login.css"
 import back from "../../assets/images/my-account.jpg"
 import { Link } from "react-router-dom"
 import { Context } from "../../context/Context"
-import axios from "axios"
+import { Axios } from "../../utils/requestMethods"
 
 export const Login = () => {
   const userRef = useRef()
@@ -14,7 +14,7 @@ export const Login = () => {
     e.preventDefault()
     dispatch({ type: "LOGINSTART" })
     try {
-      const res = await axios.post("/auth/login", {
+      const res = await Axios.post("/auth/login", {
         username: userRef.current.value,
         password: passRef.current.value,
       })

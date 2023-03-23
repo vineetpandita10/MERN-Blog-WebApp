@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react"
 import { Context } from "../../context/Context"
 import "./account.css"
 import { IoIosAddCircleOutline } from "react-icons/io"
-import axios from "axios"
+import { Axios } from "../../utils/requestMethods"
 
 export const Account = () => {
   const { user, dispatch } = useContext(Context)
@@ -32,13 +32,13 @@ export const Account = () => {
       updateUser.profilePic = filename
 
       try {
-        await axios.post("/upload", data)
+        await Axios.post("/upload", data)
       } catch (error) {
         console.log(error)
       }
     }
     try {
-      const res = await axios.put("/users/" + user._id, updateUser)
+      const res = await Axios.put("/users/" + user._id, updateUser)
       setSucc(true)
       dispatch({ type: "UPDATE_SUCC", payload: res.data })
       window.location.reload()
